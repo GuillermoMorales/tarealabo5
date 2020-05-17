@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+		<thead>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Carne</th>
+			<th>Carrera</th>			
+		</thead>
+		<th:block th:each = "estudiante, row:${estudiantes}">	
+		<tr>
+			<th th:text="${estudiante.cusuario}">
+			<th th:text="${estudiante.nombre}">
+			<th th:text="${estudiante.apellido}">
+			<th th:text="${estudiante.carne}">
+			<th th:text="${estudiante.carrera}">
+		</tr>
+		</th:block>
+	</table>
+	<input type="button" class="btn btn-secondary" value="Regresar" onclick="location.href='/inicio'" />
+
+
+</body>
+</html>

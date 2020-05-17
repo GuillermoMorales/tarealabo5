@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" th:action="@{/guardar}" th:object="${estudiante}">
+          	<input type="hidden" name="cusuario" class="form-control" th:field="*{cusuario}" />
+          	<table cellpadding="10">          	          			
+          		<tr>
+          			<td><label>Nombre: </label></td>
+          			<td><input type="text" id="nombre" class="form-control" onfocus="this.value=''" th:field="*{nombre}" >
+          			<span th:errors="*{nombre}" style="color:#DE0000" ></span></td>
+          			
+          		</tr>
+          		<tr>
+          			<td><label>Apellido:</label></td>
+          			<td><input type="text" id="apellido" class="form-control" th:field="*{apellido}" >
+          			<span th:errors="*{apellido}" style="color:#DE0000" ></span></td>
+          			
+          		</tr> 
+          		<tr>
+          			<td><label>Carne:</label></td>
+          			<td><input type="number" id="carne" class="form-control" th:field="*{carne}" >
+          			<span th:errors="*{carne}" style="color:#DE0000" ></span></td>
+          			
+          		</tr> 
+          		<tr>
+          			<td><label>Carrera:</label></td>
+          			<td><input type="text" id="carrera" class="form-control" th:field="*{carrera}" >
+          			<span th:errors="*{carrera}" style="color:#DE0000" ></span></td>
+          			
+          		</tr>          		          		
+          		<tr>
+          			<td><input type="submit"  class="btn btn-primary btn-block" value="Guardar" /></td>
+          			<td>
+          			<input type="button" class="btn btn-secondary" value="Mostrar lista" onclick="location.href='/listado'" />
+          		</td>
+          		</tr>
+          		
+          	</table>
+          	<p th:if="${resultado == 1}" class="mb-0">Estudiante guardado con &eacute;xito</p><br/>
+          	</form>
+          	
+
+</body>
+</html>
