@@ -11,5 +11,5 @@ public interface EstudianteDAO {
 	public List<Estudiante> findAll() throws DataAccessException;
 	public  Estudiante findOne(Integer codigo) throws DataAccessException;
 	public void save(Estudiante c) throws DataAccessException;
-
+	public void delete(Integer codigoEstudiante) throws DataAccessException;
 }

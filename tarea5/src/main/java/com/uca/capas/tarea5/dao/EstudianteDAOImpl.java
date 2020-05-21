@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
@@ -36,7 +37,13 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 		Estudiante c = entityManager.find(Estudiante.class, codigo);
 		return c;
 	}
-	
+	@Override
+	@Transactional
+	public void delete(Integer codigoEstudiante) throws DataAccessException
+	{
+		Estudiante estudiante = entityManager.find(Estudiante.class, codigoEstudiante);
+		entityManager.remove(estudiante);
+	}
 public void save(Estudiante c) throws DataAccessException {
 		
 		if(c.getCusuario() == null) { 

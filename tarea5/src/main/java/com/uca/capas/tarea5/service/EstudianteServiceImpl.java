@@ -30,7 +30,12 @@ public class EstudianteServiceImpl implements EstudianteService {
 		estudianteDao.save(c);
 	}
 
-
+	@Override
+	@Transactional
+	public void delete (Integer codigoEstudiante) throws DataAccessException
+	{
+		estudianteDao.delete(codigoEstudiante);
+	}
 	
 
 }

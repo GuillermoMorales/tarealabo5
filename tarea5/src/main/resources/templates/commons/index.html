@@ -43,6 +43,12 @@
           	<p th:if="${resultado == 1}" class="mb-0">Estudiante guardado con &eacute;xito</p><br/>
           	</form>
           	
+          	<form th:action="@{/borrarEstudiante}" method="post">
+		<label>Borrar estudiante por codigo: </label><input type="number" name="codigo"><br>		
+		<input type="submit" value="Borrar">
+		
+	</form><br>
+          	
 
 </body>
 </html>
